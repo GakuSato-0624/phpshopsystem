@@ -5,6 +5,7 @@
 </head>
 <body>
     <?php
+    
     try {
         #pro_add_check.phpからのデータ受け取り
         $pro_name = $_POST['name'];
