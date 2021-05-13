@@ -20,9 +20,11 @@ if (isset($_SESSION['login'])==false) {
     <?php
     try {
         #staff_edit_check.phpからのデータ受け取り
-        $staff_code = $_POST['code'];
-        $staff_name = $_POST['name'];
-        $staff_pass = $_POST['pass'];
+        require_once('../common/common.php');
+        $post = sanitize($_POST);
+        $staff_code = $post['code'];
+        $staff_name = $post['name'];
+        $staff_pass = $post['pass'];
 
         #エスケープ処理
         $staff_name = htmlspecialchars($staff_name, ENT_QUOTES, 'UTF-8');
